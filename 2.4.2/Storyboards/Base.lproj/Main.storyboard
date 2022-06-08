@@ -122,7 +122,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
                                         <connections>
-                                            <segue destination="210-Ux-aKh" kind="unwind" unwindAction="unwindSegue:" id="ZeS-35-1ch"/>
+                                            <segue destination="210-Ux-aKh" kind="unwind" unwindAction="unwindSegue:" id="k1Q-O3-cH6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -147,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="-883" y="1113"/>
         </scene>
-        <!--About Me-->
+        <!--About Me View Controller-->
         <scene sceneID="XQm-NM-xgD">
             <objects>
-                <viewController id="VKX-v1-VCk" customClass="AboutMe" sceneMemberID="viewController">
+                <viewController id="VKX-v1-VCk" customClass="AboutMeViewController" customModule="__4_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ITb-hT-aAY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="My photo"/>
                                         <connections>
-                                            <segue destination="3Qq-Qt-zLM" kind="show" id="MmD-SG-EP2"/>
+                                            <segue destination="3Qq-Qt-zLM" kind="show" identifier="photo" id="MmD-SG-EP2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcc-RS-53B">
@@ -171,7 +171,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Favorite Books"/>
                                         <connections>
-                                            <segue destination="son-LE-1aE" kind="show" id="LtA-LI-s8l"/>
+                                            <segue destination="son-LE-1aE" kind="show" identifier="books" id="LtA-LI-s8l"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -196,6 +196,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ys5-TB-NN7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xco-hJ-0hC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -227,55 +228,83 @@
             </objects>
             <point key="canvasLocation" x="-53" y="1112"/>
         </scene>
-        <!--Photo-->
+        <!--My Photo View Controller-->
         <scene sceneID="bXp-yz-Eaw">
             <objects>
-                <viewController id="3Qq-Qt-zLM" customClass="Photo" sceneMemberID="viewController">
+                <viewController id="3Qq-Qt-zLM" customClass="MyPhotoViewController" customModule="__4_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ue-LO-0M3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-qO-qQQ">
-                                <rect key="frame" x="40" y="118" width="240" height="401"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-qO-qQQ">
+                                <rect key="frame" x="40" y="49" width="240" height="470"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TvV-FQ-qUg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TvV-FQ-qUg" firstAttribute="trailing" secondItem="4Or-qO-qQQ" secondAttribute="trailing" constant="40" id="FGc-cW-GrV"/>
+                            <constraint firstItem="4Or-qO-qQQ" firstAttribute="leading" secondItem="TvV-FQ-qUg" secondAttribute="leading" constant="40" id="e0A-un-CwZ"/>
+                            <constraint firstItem="4Or-qO-qQQ" firstAttribute="bottom" secondItem="TvV-FQ-qUg" secondAttribute="bottom" id="gSH-Ya-3Da"/>
+                            <constraint firstItem="4Or-qO-qQQ" firstAttribute="top" secondItem="TvV-FQ-qUg" secondAttribute="top" constant="5" id="lQj-SC-Yld"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8sz-xZ-io2"/>
                     <connections>
-                        <outlet property="myPhotoView" destination="4Or-qO-qQQ" id="Vcg-mh-5UW"/>
+                        <outlet property="myPhotoView" destination="4Or-qO-qQQ" id="fVt-tL-Yy7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fQ-R8-y3G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="990" y="1908.8028169014085"/>
         </scene>
-        <!--Books-->
+        <!--Books View Controller-->
         <scene sceneID="RmX-LO-GLb">
             <objects>
-                <viewController id="son-LE-1aE" customClass="Books" sceneMemberID="viewController">
+                <viewController id="son-LE-1aE" customClass="BooksViewController" customModule="__4_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tK7-aE-ybs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3F-fO-pqe">
-                                <rect key="frame" x="40" y="110" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7FU-4r-88y">
-                                <rect key="frame" x="40" y="316" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="CgF-jd-lQa">
+                                <rect key="frame" x="16" y="110" width="288" height="334"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="Cwf-eN-bHx">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="334"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F3F-fO-pqe">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="gix-P6-E0Q"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7FU-4r-88y">
+                                                <rect key="frame" x="0.0" y="206" width="288" height="128"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Cwf-eN-bHx" secondAttribute="bottom" id="I43-xQ-6i9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cwf-eN-bHx" secondAttribute="trailing" id="KO0-Dr-J3s"/>
+                                    <constraint firstItem="Cwf-eN-bHx" firstAttribute="leading" secondItem="CgF-jd-lQa" secondAttribute="leading" id="Ncq-A8-4oU"/>
+                                    <constraint firstItem="Cwf-eN-bHx" firstAttribute="top" secondItem="CgF-jd-lQa" secondAttribute="top" id="UkJ-Jb-tdv"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t5E-7Q-8hP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CgF-jd-lQa" firstAttribute="top" secondItem="t5E-7Q-8hP" secondAttribute="top" constant="66" id="5TF-U1-8u4"/>
+                            <constraint firstItem="CgF-jd-lQa" firstAttribute="leading" secondItem="tK7-aE-ybs" secondAttribute="leadingMargin" id="H1C-YL-e4G"/>
+                            <constraint firstItem="t5E-7Q-8hP" firstAttribute="bottom" secondItem="CgF-jd-lQa" secondAttribute="bottom" constant="75" id="Hjc-3Z-9OD"/>
+                            <constraint firstItem="CgF-jd-lQa" firstAttribute="trailing" secondItem="tK7-aE-ybs" secondAttribute="trailingMargin" id="ceS-ap-JVh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xlV-VM-JpY"/>
                     <connections>
-                        <outlet property="atlant" destination="F3F-fO-pqe" id="aBO-wT-Y0e"/>
-                        <outlet property="theThreeMusketeers" destination="7FU-4r-88y" id="Xby-cY-FSu"/>
+                        <outlet property="atlant" destination="F3F-fO-pqe" id="XhA-zn-fQj"/>
+                        <outlet property="theThreeMusketeers" destination="7FU-4r-88y" id="jav-zZ-89W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Wc-7K-Ns7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

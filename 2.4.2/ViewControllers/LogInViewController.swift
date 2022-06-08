@@ -24,18 +24,14 @@ class LogInViewController: UIViewController {
             }
             else if let navigationVC = viewController as? UINavigationController {
                 if let aboutMeVC = navigationVC.topViewController as? AboutMeViewController {
-                    if let myPhotoVC = aboutMeVC as? MyPhotoViewController {
-                       myPhotoVC.user = user
-                    } else if let booksVC = aboutMeVC.navigationController?.topViewController as? BooksViewController {
-                       booksVC.user = user
-                   }
-               } 
+                    aboutMeVC.user = user
+                }
             }
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
     
     @IBAction func forgotData(_ sender: UIButton) {
         sender.tag == 0 ?
@@ -52,8 +48,7 @@ class LogInViewController: UIViewController {
         }
     }
     
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-        guard let _ = segue.source as? WelcomeViewController else { return }
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         userNameTextField.text = ""
         passwordTextField.text = ""
     }

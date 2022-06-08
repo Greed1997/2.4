@@ -7,8 +7,19 @@
 
 import UIKit
 
-class AboutMeViewController: UIViewController {
+class AboutMeViewController: LogInViewController {
 
+    var  user: User!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "photo" {
+            guard let myPhotoVC = segue.destination as? MyPhotoViewController else { return }
+            myPhotoVC.user = user
+        } else if segue.identifier == "books" {
+            guard let books = segue.destination as? BooksViewController else { return }
+            books.user = user
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

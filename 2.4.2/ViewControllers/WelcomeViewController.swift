@@ -9,9 +9,10 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    @IBOutlet var welcomeLabel: UILabel!
     var user: User!
 
+    @IBOutlet var welcomeLabel: UILabel!
+        
     private let primaryColor = UIColor(
         red: 210/255,
         green: 110/255,
